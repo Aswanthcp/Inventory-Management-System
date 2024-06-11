@@ -23,7 +23,7 @@ class ProductListCreate(generics.ListCreateAPIView):
         return Response(display_serializer.data, status=status.HTTP_201_CREATED)
 
 
-class ProductDetails(generics.RetrieveUpdateAPIView):
+class ProductDetails(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     lookup_field = "id"
